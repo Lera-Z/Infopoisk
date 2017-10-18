@@ -55,7 +55,7 @@ def search(query):
                 docarray = inverted_inds[q]
             else:
                 docarray = []
-            for doc_name in inverted_inds[q]:
+            for doc_name in docarray:
                 # print(doc_name)
                 n = len(inverted_inds[q])
                 qf = inverted_inds[q][doc_name]
