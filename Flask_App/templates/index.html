@@ -67,6 +67,9 @@
                   <br>
                   <br>
                   <div id="result">
+                    {% if not links %}
+                    <h3> По вашему запросу ничего не найдено </h3>
+                    {% endif %}
                   {% for href in links %}
                     <a class="mylink" href="{{ href[0][0] }}" target="_blank"> {{ href[0][1] }} </a><br>
                   {% endfor %}</div>
