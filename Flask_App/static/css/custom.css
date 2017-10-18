@@ -10,3 +10,7 @@
 a.mylink {
 font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
 }
+
+header.masthead .page-heading h1, header.masthead .site-heading h1 {
+    font-size: 50px;
+}
