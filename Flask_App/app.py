@@ -81,8 +81,8 @@ def index():
         query = request.args['query']
         ret = search(query)
         # title = ret[1]
-        return render_template('index.html', links=ret)
-    return render_template('index.html', links=[])
+        return render_template('index.html', links=ret, after_query = True)
+    return render_template('index.html', links=[], after_query = False)
 
 
 if __name__ == '__main__':
