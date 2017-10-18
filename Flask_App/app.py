@@ -51,6 +51,10 @@ def search(query):
         if word not in stop_words:
             word = word.lower()
             q = stem.lemmatize(word)[0]
+            if q in inverted_inds:
+                docarray = inverted_inds[q]
+            else:
+                docarray = []
             for doc_name in inverted_inds[q]:
                 # print(doc_name)
                 n = len(inverted_inds[q])
@@ -65,6 +69,7 @@ def search(query):
                     #             print(link)
                     #             break
                     relevance_list[(link, title)] += index
+
     arr = sorted(relevance_list.items(), key=lambda x: x[1], reverse=True)[:10]
     # print(arr)
     return arr
