@@ -31,10 +31,10 @@ def compute_K(dl, avdl):
     return k1 * ((1-b) + b * (float(dl)/float(avdl)))
 from collections import defaultdict
 
-with open('/Users/Valeriya/Infopoisk/inverse_inds.txt', 'r') as file:
+with open('inverse_inds.txt', 'r') as file:
     inverted_inds = json.load(file)
 
-with open('/Users/Valeriya/Infopoisk/lens.txt', 'r') as file:
+with open('lens.txt', 'r') as file:
     lens_of_texts = json.load(file)
 
 # print(inverted_inds)
@@ -60,7 +60,7 @@ def search(query):
                 n = len(inverted_inds[q])
                 qf = inverted_inds[q][doc_name]
                 if 'ipynb' not in doc_name:
-                    text = open('/Users/Valeriya/Infopoisk/corpus/' + doc_name, 'r')
+                    text = open('corpus/' + doc_name, 'r')
                     read_txt = text.read()
                     index = score_BM25(n, qf, N, lens_of_texts[doc_name], avdl)
                     # print(index)
